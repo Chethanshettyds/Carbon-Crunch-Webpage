@@ -61,12 +61,14 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid transparent;
-    transition: border 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    cursor: pointer;
 }
 
 .feature-box:hover {
     border: 2px solid #4CAF50;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
 
 .feature-box h3 {
@@ -117,7 +119,7 @@ header {
     height: auto !important;
     position: absolute !important;
     left: 0 !important; /* Forces image to the left */
-    width: 80%;
+    width: 100%;
 }
 
 /* Moves stats to the right */
@@ -191,7 +193,7 @@ header {
   overflow: hidden;
   margin-left: auto; /* Push to right */
   margin-right: 100px !important; /* Adjust this value */
-  margin-top: 500px;
+  margin-top: 480px;
 }
 
 /* Slide Track */
@@ -227,14 +229,15 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+  background: rgba(82, 247, 6, 0.697);
+  color: rgb(222, 18, 18);
   border: none;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
   font-size: 18px;
   z-index: 10;
+  transition: background 0.3s;
 }
 
 /* Align text inside stat-box to the left */
@@ -257,8 +260,15 @@ header {
 }
 
 
+/* LAZY LOADING */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
 
-
+.lazy-load.loaded {
+    opacity: 1;
+}
 
 
 
